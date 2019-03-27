@@ -7,7 +7,7 @@ namespace Webpkdt.Models.product
 {
     public class product
     {
-        private int id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
         public double price { get; set; }
         public static List<product> list_product = new List<product>()
