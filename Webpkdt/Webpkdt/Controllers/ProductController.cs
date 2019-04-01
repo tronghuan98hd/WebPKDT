@@ -10,6 +10,7 @@ namespace Webpkdt.Controllers
     public class ProductController : Controller
     {
         List<product> list_products = new List<product>();
+
         // GET: Product
         public ActionResult Index()
         {
@@ -44,7 +45,7 @@ namespace Webpkdt.Controllers
             }
             return RedirectToAction("Index");
         }
-        public ActionResult Delete(int id)
+        public ActionResult Delete_product(int id)
         {
             var Pr = product.list_product.SingleOrDefault(x => x.id == id);
             return View(Pr);
