@@ -129,11 +129,13 @@
     <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\product\color.cs" />
     <Compile Include="Models\product\product.cs" />
+    <Compile Include="Models\product\type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +180,12 @@
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Color\Index.cshtml" />
     <Content Include="Views\Color\Create.cshtml" />
+    <Content Include="Views\Color\Edit.cshtml" />
+    <Content Include="Views\Color\Delete.cshtml" />
+    <Content Include="Views\Type\Create.cshtml" />
+    <Content Include="Views\Type\Edit.cshtml" />
+    <Content Include="Views\Type\Index.cshtml" />
+    <Content Include="Views\Type\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,52 +7,57 @@ using Webpkdt.Models.product;
 
 namespace Webpkdt.Controllers
 {
-    public class ColorController : Controller
+    public class TypeController : Controller
     {
-        List<color> list_color = new List<color>();
-        // GET: Color
+        List<type> list_type = new List<type>();
+        // GET: Type
         public ActionResult Index()
         {
-            return View(color.get_list());
+            return View(type.get_list());
         }
+
+        //Them loai hang moi
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Create(color cl)
+        public ActionResult Create(type T)
         {
-            color.list_color.Add(cl);
+            type.list_type.Add(T);
             return RedirectToAction("Index");
         }
+
+        //Sua loai mat hang
         [HttpGet]
         public ActionResult Edit(int id)
         {
             var cl = color.list_color.SingleOrDefault(x => x.id == id);
             return View(cl);
         }
+
         [HttpPost]
-        public ActionResult Edit(color cl)
+        public ActionResult Edit(type T)
         {
-            var findcl = color.list_color.SingleOrDefault(x => x.id == cl.id);
-            if (findcl != null)
+            var findt = type.list_type.SingleOrDefault(x => x.id == T.id);
+            if (findt != null)
             {
-                findcl.id = cl.id;
-                findcl.name = cl.name;
+                findt.id = T.id;
+                findt.name = T.name;
             }
             return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)
         {
-            var cl = color.list_color.SingleOrDefault(x => x.id == id);
-            return View(cl);
+            var T = type.list_type.SingleOrDefault(x => x.id == id);
+            return View(T);
         }
         [HttpPost]
-        public ActionResult Delete(color cl)
+        public ActionResult Delete(type T)
         {
-            var findcl = color.list_color.SingleOrDefault(x => x.id == cl.id);
-            color.list_color.Remove(findcl);
+            var findT = type.list_type.SingleOrDefault(x => x.id == T.id);
+            type.list_type.Remove(findT);
             return RedirectToAction("Index");
         }
     }

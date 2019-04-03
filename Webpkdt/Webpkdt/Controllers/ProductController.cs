@@ -12,10 +12,13 @@ namespace Webpkdt.Controllers
         List<product> list_products = new List<product>();
 
         // GET: Product
+        // tao list cac san pham
         public ActionResult Index()
         {
             return View(product.get_list());
         }
+
+        //Tao moi mot san pham
         [HttpGet]
         public ActionResult Create()
         {
@@ -27,6 +30,8 @@ namespace Webpkdt.Controllers
             product.list_product.Add(Pr);
             return RedirectToAction("Index");
         }
+
+        //Chinh sua thong tin san pham
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -45,7 +50,9 @@ namespace Webpkdt.Controllers
             }
             return RedirectToAction("Index");
         }
-        public ActionResult Delete_product(int id)
+
+        //xoa san pham
+        public ActionResult Delete(int id)
         {
             var Pr = product.list_product.SingleOrDefault(x => x.id == id);
             return View(Pr);
