@@ -14,7 +14,23 @@ namespace Webpkdt.Controllers
         {
             return View(user.get_list());
         }
-
+        [HttpGet]
+        public ActionResult login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult login(loign user)
+        {
+            if ("admin".Equals(user.account) & "123".Equals(user.password))
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
         //Tao moi user
         [HttpGet]
         public ActionResult Create()
